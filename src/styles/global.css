@@ -1,0 +1,234 @@
+/* ═════════════════════════════════════════════════════════════════════
+   JOY ELITE DIGITAL — LUXURY DESIGN TOKENS & BASE STYLES
+   Crafted with zero-pill discipline, mathematical hierarchy, and restrained luxury.
+   ═════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Brand Color Tokens */
+  --color-primary: #700066;
+  --color-primary-dark: #470041;
+  --color-primary-hover: #5a0052;
+  --color-secondary: #FF94F5;
+  --color-secondary-dark: #b843af;
+  --color-secondary-soft: #fcf1fa;
+  
+  /* Neutral Color Tokens */
+  --color-ink: #1A1218;
+  --color-ink-muted: #645660;
+  --color-ink-subtle: #8F7F8B;
+  --color-canvas: #FAF7F9;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F4EDF2;
+  --color-border: rgba(112, 0, 102, 0.10);
+  --color-border-subtle: rgba(112, 0, 102, 0.05);
+  --color-white: #FFFFFF;
+  
+  /* Typography Tokens */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --font-size-base: 18px;
+  --font-size-mobile: 16px;
+  --line-height-body: 1.65;
+  --line-height-heading: 1.15;
+  
+  /* Spacing Scale (4, 8, 16, 24, 32, 48, 64, 96, 128px) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+  
+  /* Layout Dimensions */
+  --container-max-width: 1200px;
+  --container-padding: 24px;
+  --section-padding-desktop: 96px;
+  --section-padding-tablet: 64px;
+  --section-padding-mobile: 48px;
+  --header-height: 80px;
+  
+  /* Depth & Finish Tokens */
+  --radius-button: 8px;
+  --radius-card: 16px;
+  
+  /* Soft Resting Shadow & Refined Hover Shadow */
+  --shadow-resting: 0 4px 24px -2px rgba(112, 0, 102, 0.06), 0 2px 8px -1px rgba(26, 18, 24, 0.04);
+  --shadow-hover: 0 16px 40px -4px rgba(112, 0, 102, 0.14), 0 6px 14px -2px rgba(26, 18, 24, 0.06);
+  --shadow-nav: 0 2px 16px rgba(26, 18, 24, 0.05);
+  
+  /* Motion Tokens */
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-medium: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: var(--font-size-mobile);
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  background-color: var(--color-canvas);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  line-height: var(--line-height-heading);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p {
+  max-width: 65ch;
+  color: var(--color-ink-muted);
+}
+
+/* Section Anchor Offsets for Sticky Navbar */
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+/* Standard Content Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Vertical Section Spacing */
+.section-padding {
+  padding-top: var(--section-padding-desktop);
+  padding-bottom: var(--section-padding-desktop);
+}
+
+@media (max-width: 1024px) {
+  .section-padding {
+    padding-top: var(--section-padding-tablet);
+    padding-bottom: var(--section-padding-tablet);
+  }
+}
+
+@media (max-width: 640px) {
+  .section-padding {
+    padding-top: var(--section-padding-mobile);
+    padding-bottom: var(--section-padding-mobile);
+  }
+}
+
+/* Section Eyebrow (No pill - clean typography) */
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+}
+
+/* Hairline Dividers */
+.hairline-divider {
+  height: 1px;
+  background-color: var(--color-border);
+  width: 100%;
+  border: none;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Luxury Button Hover States */
+.luxury-btn {
+  transform: translateY(0);
+}
+
+.luxury-btn:hover {
+  transform: translateY(-2px);
+}
+
+.luxury-btn-primary:hover {
+  background-color: var(--color-primary-hover) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.luxury-btn-secondary:hover {
+  background-color: var(--color-surface-alt) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.luxury-btn-white:hover {
+  background-color: #f7eef5 !important;
+  color: var(--color-primary-dark) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22) !important;
+}
+
+.luxury-btn-outlineWhite:hover {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: #FFFFFF !important;
+}
+
+/* Service Card Hover Effect */
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover) !important;
+  border-color: rgba(112, 0, 102, 0.22) !important;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
